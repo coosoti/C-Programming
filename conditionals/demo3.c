@@ -3,7 +3,7 @@
 
 int main()
 {
-	int x = 8, y = 8;
+	int x = 8, y = 6;
 	if (x != y)
 	{
 		printf("%d is not equal to %d \n", x, y);
