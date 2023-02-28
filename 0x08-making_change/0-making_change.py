@@ -30,9 +30,8 @@ def makeChange(coins, total):
 
         dp = [total + 1] * (total + 1)
         dp[0] = 0
-        coins = sorted(coins, reverse=True)
         for a in range(1, total + 1):
-            for c in coins:
+            for c in sorted(coins, reverse=True):
                 if (a - c) >= 0:
                     dp[a] = min(dp[a], 1 + dp[a - c])
         if dp[total] != total + 1:
