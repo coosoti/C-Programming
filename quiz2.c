@@ -9,16 +9,17 @@
 //
 #include <stdio.h>
 
-void revstr(char *str);
+char *revstr(char *str);
 
-//int main()
-//{
-//	char *str = "hello";
-//	revstr(str);
-//	return 0;
-//}
+int main()
+{
+	char *str = "hello";
+	printf("%s", revstr(str));
+	printf("\n");
+	return 0;
+}`
 
-void revstr(char *str)
+char *revstr(char *str)
 {
 	int i = 0, len = 0;
 	// str ends in '\0'
@@ -31,8 +32,8 @@ void revstr(char *str)
 	// 'h', 'e', 'l', 'l', 'o', '\0' 
 	for (i = len - 1; i >= 0; i--)
 	{
-		printf("%c", str[i]);
+		str[len-1-i];
 	}
-	printf("\n");
+	return 
 }
 
