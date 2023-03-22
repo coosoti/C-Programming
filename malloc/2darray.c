@@ -7,12 +7,12 @@ int main() {
     	int cols = 4;
 	
    	 // Allocate memory for the 2D array
-    	arr = (int **)malloc(rows * sizeof(int *));
+    	arr = malloc(rows * sizeof(int *));
 	if (arr == NULL) {
     		return (NULL);
 	}
 	for (int i = 0; i < rows; i++) {
-    		arr[i] = (int *)malloc(cols * sizeof(int));
+    		arr[i] = malloc(cols * sizeof(int));
     		if (arr[i] == NULL) {
         		for (int j = 0; j < i; j++) {
             			free(arr[j]);

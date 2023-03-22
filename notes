@@ -1,0 +1,17 @@
+# array[i][j]
+
+//int array[2][3] = {{2,3,0}, {6,1,5}}; // 
+(for i =0, i < 2; i++)
+{      array[i] = malloc()
+	if array[i] == NULL;
+	(for j=0, j<3, j++)
+		free arr[j]
+	free(array[i];
+	return NULL
+	{ 
+	
+
+arr = (int *)malloc(sizeof(int)* size)
+if arr == NULL;
+	return NULL;
+
