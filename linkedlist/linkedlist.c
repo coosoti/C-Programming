@@ -157,6 +157,41 @@ Node_t *insert_node_at_nth_index(Node_t **head, unsigned int index, int data)
     return *head;
 }
 
+// Delete node at an index
+
+Node_t *delete_node_at_nth_index(Node_t **head, int index) {
+    if (*head == NULL || index == 0) {
+        // Linked list is empty or index is 0
+        return NULL;
+    }
+
+    Node_t *current = *head;
+    Node_t *previous = NULL;
+    int i = 0;
+
+    while (current != NULL && i < index) {
+        previous = current;
+        current = current->next;
+        i++;
+    }
+
+    if (i == index && current != NULL) {
+        // Found the node to be deleted
+        if (previous == NULL) {
+            // Node to be deleted is the head of the linked list
+            *head = current->next;
+        } else {
+            previous->next = current->next;
+        }
+        current->next = NULL;
+	free(current);
+        return current;
+    } else {
+        // Index was out of bounds
+        return NULL;
+    }
+}
+
 int main(void)
 {
     Node_t *head;
@@ -175,16 +210,20 @@ int main(void)
     len = linkedlist_len(head);
     printf("-> %d elements\n", len);
     //delete node at the beginning of a linked list
-    deleted_data =  delete_node_at_beginning_of_list(&head);
-    printf("\n");
-    printf("Deleted head node's data: %d\n", deleted_data);
-    print_list(head);
+    //deleted_data =  delete_node_at_beginning_of_list(&head);
+    //printf("\n");
+    //printf("Deleted head node's data: %d\n", deleted_data);
+    //print_list(head);
     //Get the nth_node
-    nth_node = return_node_at_nth_index(head, 2);
-    printf("\nData at the index is: %d\n", nth_node->data);
+    //nth_node = return_node_at_nth_index(head, 2);
+    //printf("\nData at the index is: %d\n", nth_node->data);
 
     //insert a node at nth index
     insert_node_at_nth_index(&head, 3, 9);
+    print_list(head);
+    printf("\n");
+    printf("Delete node at 3rd index\n");
+    delete_node_at_nth_index(&head, 3);
     print_list(head);
     free_list(&head);
     return (0);
