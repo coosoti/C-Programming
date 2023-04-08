@@ -11,7 +11,7 @@ unsigned int binary_to_uint(const char *b)
 	unsigned int n = 0, m = 1;
 	int h;
 
-	while (*b == '\0')
+	while (!b)
 		return (0);
 
 	for (h = 0; b[h];)
