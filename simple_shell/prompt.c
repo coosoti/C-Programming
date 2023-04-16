@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
-* shellPrompt - shell prompt
+* hshPrompt - hsh prompt
 * Return: void
 */
 
