@@ -1,0 +1,2 @@
+all:
+	gcc utils.c main.c _putchar.c -o test0

@@ -1,0 +1,4 @@
+CC = gcc
+SRC = main.c _putchar.c utils.c
+all:
+	$(CC) $(SRC) -o test1
